@@ -1,0 +1,69 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="InvokerApp.View.MainWindow"
+        Title="InvokerApp"
+        MinWidth="600" MinHeight="480"
+        Width="600" Height="480">
+    <DockPanel Margin="10">
+        <StackPanel
+                Orientation="Horizontal" Margin="10" HorizontalAlignment="Right"
+                DockPanel.Dock="Bottom">
+            <Button Padding="10" Name="BtLaunch">Launch</Button>
+        </StackPanel>
+        <TabControl Name="Tabs" Margin="10">
+            <TabItem Margin="10" Header="Input">
+                <DockPanel Margin="10">
+                    <!-- Executable -->
+                    <DockPanel DockPanel.Dock="Top" Margin="10">
+                        <Label Padding="10" DockPanel.Dock="Left">Executable</Label>
+                        <TextBox Padding="10" Name="EdExe"/>
+                    </DockPanel>
+
+                    <!-- Arguments -->
+                    <DockPanel DockPanel.Dock="Top" Margin="10">
+                        <Label Padding="10" DockPanel.Dock="Left">Arguments</Label>
+                        <TextBox Padding="10" Name="EdArgs"/>
+                    </DockPanel>
+
+                    <!-- Input file -->
+                    <DockPanel DockPanel.Dock="Top" Margin="10">
+                        <Label Padding="10" DockPanel.Dock="Left">Input File</Label>
+                        <Button Name="BtEdOpenInput" Padding="10" DockPanel.Dock="Right">...</Button>
+                        <SelectableTextBlock Padding="10" Name="EdInputFile"/>
+                    </DockPanel>
+
+                    <!-- Output file -->
+                    <DockPanel DockPanel.Dock="Top" Margin="10">
+                        <Label Padding="10" DockPanel.Dock="Left">Output File</Label>
+                        <Button Name="BtEdOpenOutput" Padding="10" DockPanel.Dock="Right">...</Button>
+                        <SelectableTextBlock Padding="10" Name="EdOutputFile"/>
+                    </DockPanel>
+
+                    <!-- Input panel -->
+                    <ScrollViewer>
+                        <TextBox
+                            AcceptsReturn="True"
+                            TextWrapping="NoWrap"
+                            Name="EdInput"
+                            Padding="10"
+                            FontFamily="Courier" />
+                    </ScrollViewer>
+                </DockPanel>
+            </TabItem>
+            <TabItem Margin="10" Header="Output">
+                <DockPanel Margin="10">
+                    <ScrollViewer>
+                        <SelectableTextBlock
+                            TextWrapping="NoWrap"
+                            Name="EdOutput"
+                            Padding="10"
+                            FontFamily="Courier" />
+                    </ScrollViewer>
+                </DockPanel>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>
